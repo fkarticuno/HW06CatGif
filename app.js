@@ -1,5 +1,5 @@
 
-userInput = 'cat';  
+var userinput = 'cat';  
 
 // Build content area
 
@@ -9,14 +9,13 @@ function buildMain() {
     mainrow.attr('id','gifsgohere');
     var searchpoint = $('<div>');
     searchpoint.attr('class','col-md-4');
-    var searchinput = '<input type="text" id="ipt"></input><input type="button" id="uSubmit"></input>';
+    var searchinput = '<input type="text" id="ipt"></input><input type="submit" id="uSubmit"></input>';
     searchpoint.html(searchinput);;
     $('#content').append(mainrow, searchpoint);
 }
 
 // Build storage for gifs
 var numofgifs = 0;
-var userinput = 0;
 function buildSub() {
     console.log('button click moved to buildsub()');
     userinput = $('#ipt').val();
@@ -24,7 +23,7 @@ function buildSub() {
     numofgifs++;
 };
 
-// Submit gifreq
+// Submit gifreq BROKEN
  $('#uSubmit').click(function() {
     console.log('button clicked')
     buildSub();
