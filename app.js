@@ -1,7 +1,12 @@
+$(document).ready(function(){
+// Submit gifreq BROKEN
+    
 
 var userinput = 'cat';  
 
 // Build content area
+
+buildMain();
 
 function buildMain() {
     var mainrow = $('<div>');
@@ -10,10 +15,14 @@ function buildMain() {
     var searchpoint = $('<div>');
     searchpoint.attr('class','col-md-4');
     var searchinput = '<input type="text" id="ipt"></input><input type="submit" id="uSubmit"></input>';
-    searchpoint.html(searchinput);;
+    searchpoint.html(searchinput);
     $('#content').append(mainrow, searchpoint);
 }
 
+$("#uSubmit").click(function() {
+    console.log('button clicked');
+    buildSub();
+});
 // Build storage for gifs
 var numofgifs = 0;
 function buildSub() {
@@ -23,11 +32,7 @@ function buildSub() {
     numofgifs++;
 };
 
-// Submit gifreq BROKEN
- $('#uSubmit').click(function() {
-    console.log('button clicked')
-    buildSub();
-    })
+
 
 
 
@@ -35,7 +40,7 @@ function buildSub() {
 function callGiphy(gifreq) {
     console.log('callgiphy() '+userinput)
     var APIKey = "OrGsAQPACjDG7CuKA31b1bSM9ZqDShC3";
-    var queryURL = "http://api.giphy.com/v1/gifs/search?random&tag="+userinput+"&api_key="+APIKey;
+    var queryURL = "http://api.giphy.com/v1/gifs/random?&tag=cat" + "&api_key=" + APIKey;
     $.ajax({
     url: queryURL,
     method: "GET"
@@ -51,4 +56,5 @@ function callGiphy(gifreq) {
 
 // Initialize
 
-buildMain();
+
+});
