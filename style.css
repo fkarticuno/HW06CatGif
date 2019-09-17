@@ -1,0 +1,20 @@
+
+div {
+    border: 2px solid blue;
+    background-color: bisque;
+}
+img {
+    height: 200px; 
+    width: 200px;
+}
+.title {
+    text-align: center;
+}
+.new {
+    height: 200px; 
+    width: 200px;
+    border: 2px solid blue;
+    background-color: bisque;
+    padding: 0px;
+    margin: 2px;
+}

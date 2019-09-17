@@ -47,7 +47,6 @@ $(document).ready(function(){
         }).then(function(response) {
         console.log(response);
         //console.log(response.data.image_url);
-        //var ima = '<img src='+'"'+response.data.embed_url+"'"+'/>';
         var newimgspan = $('<span>');
         newimgspan.addClass('new');
         var actiongif = response.data.image_original_url;
