@@ -83,7 +83,8 @@ $(document).ready(function(){
             func stop()
                 same as func stop() but reverses behavior
         */
-    $('img').click(function() {
+        $(document).on('click','img',function() {
+        //$('img').click(function() {
         console.log('gif freeze');
         console.log('class1 click', $(this).attr('class1'));
         console.log('class2 click', $(this).attr('class2'));
