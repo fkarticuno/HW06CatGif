@@ -85,39 +85,49 @@ $(document).ready(function(){
         */
     $('img').click(function() {
         console.log('gif freeze');
-        console.log($(this).attr('class1'));
-        console.log($(this).attr('class2'));
-        console.log($(this).attr('class3'));
+        console.log('class1 click', $(this).attr('class1'));
+        console.log('class2 click', $(this).attr('class2'));
+        console.log('class3 click', $(this).attr('class3'));
         console.log('This.alt: ' + $(this).attr('alt'));
-        ($(this).attr('class3')=='0'?stop():start())
         
-        function start() {
-            console.log($(this).parent(),$(this))
-    
-            $(this).removeAttr('class3');
-
-            $(this).html('<img src='+
-            '"'+$(this).attr('class1')+'"'+
-            ' alt='+'"#'+$(this).attr('alt')+
-            '"'+' class1=' +'"'+ $(this).attr('class1')+'"' +
-            '"'+' class2=' +'"'+ $(this).attr('class2') +'"' +
-            '"'+' class3=' +'"'+ '0' +'"' +
-            ' />');
-            console.log('this is go : ')
+        
+        var start = () => {
+            console.log('start!!!!')
+            $(this).attr('src', $(this).attr('class2'));
+            //$(this).attr('class3','0');
+            // console.log($(this).parent(),$(this))
+            // console.log('class1', $(this).attr('class1'))
+            // $(this).removeAttr('class3');
+            // $(this).html('<img src='+
+            // '"'+$(this).attr('class1')+'"'+
+            // ' alt='+'"#'+$(this).attr('alt')+
+            // '"'+' class1=' +'"'+ $(this).attr('class1')+'"' +
+            // '"'+' class2=' +'"'+ $(this).attr('class2') +'"' +
+            // '"'+' class3=' +'"'+ '0' +'"' +
+            // ' />');
+            // console.log('this is go : ')
+            
         };
-        function stop() {
-            console.log($(this).parent(),$(this))
-            $(this).removeAttr('class3');
+        var stop = () => {
+            console.log('stop!!!!')
+            console.log('this', $(this));
+            console.log($(this).attr('class1'));
+            $(this).attr('src', $(this).attr('class2'));
+            //$(this).attr('class3','1');
+            // console.log('class1', $(this).attr('class1'))
+            // console.log($(this).parent(),$(this))
+            // $(this).removeAttr('class3');
+            // $(this).html('<img src='+
+            // '"'+$(this).attr('class1')+'"'+
+            // ' alt='+'"#'+$(this).attr('alt')+
+            // '"'+' class1=' +'"'+ $(this).attr('class1')+'"' +
+            // '"'+' class2=' +'"'+ $(this).attr('class2') +'"' +
+            // '"'+' class3=' +'"'+ '1' +'"' +
+            // ' />');
+            // console.log('this is stop : '+$(this).attr('class3'));
+        }
 
-            $(this).html('<img src='+
-            '"'+$(this).attr('class1')+'"'+
-            ' alt='+'"#'+$(this).attr('alt')+
-            '"'+' class1=' +'"'+ $(this).attr('class1')+'"' +
-            '"'+' class2=' +'"'+ $(this).attr('class2') +'"' +
-            '"'+' class3=' +'"'+ '1' +'"' +
-            ' />');
-            console.log('this is stop : '+$(this).attr('class3'));
-        };
+        $(this).attr('class3')=='0' ? stop() : start()
         
     });
 
